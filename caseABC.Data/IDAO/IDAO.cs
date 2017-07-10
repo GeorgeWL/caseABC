@@ -14,11 +14,11 @@ namespace caseABC.Data.IDAO
         //In later iteration may instead split into 
         //GetAllparcels and GetCustomerParcels
         //IList<Parcel> GetAllParcels(int ParcelId)
-        //create
+        //create for new parcels
         void CreateCustomerParcel(int ParcelId);
-        //edit
+        //edit for current parcels
         void EditCustomerParcel(int ParcelId);
-        //delete
+        //delete for current parcels
         void DeleteCustomerParcel(int ParcelId);
     //Tracking
         //Should Simply be an IList of all Tracking Events
