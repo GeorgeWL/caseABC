@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace caseABC.Data.IDAO
 {
-    public interface IDAO
+    public interface IabcDAO
     {
      //Parcels
         //get IList of Parcels for One Customer

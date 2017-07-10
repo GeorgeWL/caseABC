@@ -27,5 +27,7 @@ namespace caseABC.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tracking> Tracking { get; set; }
+
+        public object CustomerId { get; set; }
     }
 }

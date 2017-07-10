@@ -65,8 +65,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>caseABCDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DAO\DAO.cs" />
-    <Compile Include="IDAO\IDAO.cs" />
+    <Compile Include="DAO\abcDAO.cs" />
+    <Compile Include="IDAO\IabcDAO.cs" />
     <Compile Include="Parcel.cs">
       <DependentUpon>caseABCDataModel.tt</DependentUpon>
     </Compile>
