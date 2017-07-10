@@ -65,6 +65,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>caseABCDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DAO.cs" />
+    <Compile Include="IDAO\IDAO.cs" />
     <Compile Include="Parcel.cs">
       <DependentUpon>caseABCDataModel.tt</DependentUpon>
     </Compile>
@@ -73,16 +75,7 @@
       <DependentUpon>caseABCDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\caseABC.Services\caseABC.Services.csproj">
-      <Project>{5fcabd56-05ce-4bed-b833-613262904014}</Project>
-      <Name>caseABC.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="IDAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.Config" />
     <EntityDeploy Include="caseABCDataModel.edmx">
