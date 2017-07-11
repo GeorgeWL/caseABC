@@ -13,12 +13,12 @@ namespace caseABC.Data.DAO
     public class abcDAO : IabcDAO
     {
         //stores ABCentities locally into a db context
-        //private caseABCEntities _context;
+        private caseABCEntities _context;
         //use local context to create new objects
-        //public abcDAO()
-        //{
-        //    _context = new caseABCEntities();
-        //}
+        public abcDAO()
+        {
+            _context = new caseABCEntities();
+         }
         public IList<Parcel> GetCustomerParcels(int CustomerId)
         {
             throw new NotImplementedException();
