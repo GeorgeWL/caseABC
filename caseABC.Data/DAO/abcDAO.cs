@@ -24,10 +24,10 @@ namespace caseABC.Data.DAO
         //make an Iquery of the parcel table in database and store it in _parcels
             IQueryable<Parcel> _parcel;
             //let Iquery know what _parcel object represents
-            _parcel = from parcel
+            _parcel = from p
                           in _context.Parcel
-                          where parcel.customerId == customerId
-                          select parcel;
+                          where p.customerId == customerId
+                          select p;
             return _parcel.ToList<Parcel>();
             //throw new NotImplementedException();
         }
@@ -44,11 +44,7 @@ namespace caseABC.Data.DAO
             //parcels.customerId = parcelId.customerId;
             //parcels.pickupAddress = parcelId.pickupAddress;
             //parcels.pickupDate = parcelId.pickupDate;
-            //
-            //
             //That's definitely wrong...I'll have to figure that out
-            //
-            //
             _context.Parcel.Add(parcel);
             _context.SaveChanges();
             //throw new NotImplementedException();
@@ -56,10 +52,21 @@ namespace caseABC.Data.DAO
 
         public void EditCustomerParcel(Parcel parcel)
         {
-            throw new NotImplementedException();
+            Parcel parcels =
+                (from P
+                 in _context.Parcel
+                 //where parcel.parcelId == parcel.parcelId
+                 select P).ToList<Parcel>().First();
+            //change from context of parcels to equal parcel
+            parcels.parcelId = parcel.parcelId;
+            parcels.customerId = parcel.customerId;
+            parcels.pickupAddress = parcel.pickupAddress;
+            parcels.pickupDate = parcel.pickupDate;
+            _context.SaveChanges();
+            //throw new NotImplementedException();
         }
 
-        public void DeleteCustomerParcel(int ParcelId)
+        public void DeleteCustomerParcel(Parcel parcel)
         {
             throw new NotImplementedException();
         }
