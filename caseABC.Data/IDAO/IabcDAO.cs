@@ -18,7 +18,7 @@ namespace caseABC.Data.IDAO
         //GetAllparcels and GetCustomerParcels
         //IList<Parcel> GetAllParcels(int ParcelId)
         //create for new parcels
-        void CreateCustomerParcel(int ParcelId);
+        void CreateCustomerParcel(Parcel parcel);
         //edit for current parcels
         void EditCustomerParcel(int ParcelId);
         //delete for current parcels
