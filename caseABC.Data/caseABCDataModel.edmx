@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ABCDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ABCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Parcel">
           <Key>
             <PropertyRef Name="parcelId" />
@@ -24,31 +24,15 @@
           <Property Name="Notes" Type="nvarchar(max)" />
           <Property Name="parcelId" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Tracking__parcel__3E52440B">
-          <End Role="Parcel" Type="Self.Parcel" Multiplicity="1" />
-          <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Parcel">
-              <PropertyRef Name="parcelId" />
-            </Principal>
-            <Dependent Role="Tracking">
-              <PropertyRef Name="parcelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="ABCDataModelStoreContainer">
-          <EntitySet Name="Parcel" EntityType="Self.Parcel" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Tracking__parcel__3E52440B" Association="Self.FK__Tracking__parcel__3E52440B">
-            <End Role="Parcel" EntitySet="Parcel" />
-            <End Role="Tracking" EntitySet="Tracking" />
-          </AssociationSet>
+        <EntityContainer Name="ABCModelStoreContainer">
+          <EntitySet Name="Parcel" EntityType="Self.Parcel" Schema="b1037178" store:Type="Tables" />
+          <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="b1037178" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ABCDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ABCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Parcel">
           <Key>
             <PropertyRef Name="parcelId" />
@@ -57,7 +41,6 @@
           <Property Name="customerId" Type="Int32" Nullable="false" />
           <Property Name="pickupAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="pickupDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Tracking" Relationship="Self.FK__Tracking__parcel__3E52440B" FromRole="Parcel" ToRole="Tracking" />
         </EntityType>
         <EntityType Name="Tracking">
           <Key>
@@ -68,36 +51,19 @@
           <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="parcelId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Parcel" Relationship="Self.FK__Tracking__parcel__3E52440B" FromRole="Tracking" ToRole="Parcel" />
         </EntityType>
-        <Association Name="FK__Tracking__parcel__3E52440B">
-          <End Role="Parcel" Type="Self.Parcel" Multiplicity="1" />
-          <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Parcel">
-              <PropertyRef Name="parcelId" />
-            </Principal>
-            <Dependent Role="Tracking">
-              <PropertyRef Name="parcelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="caseABCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ABC_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Parcel" EntityType="Self.Parcel" />
           <EntitySet Name="Tracking" EntityType="Self.Tracking" />
-          <AssociationSet Name="FK__Tracking__parcel__3E52440B" Association="Self.FK__Tracking__parcel__3E52440B">
-            <End Role="Parcel" EntitySet="Parcel" />
-            <End Role="Tracking" EntitySet="Tracking" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ABCDataModelStoreContainer" CdmEntityContainer="caseABCEntities">
+        <EntityContainerMapping StorageEntityContainer="ABCModelStoreContainer" CdmEntityContainer="ABC_Entities">
           <EntitySetMapping Name="Parcel">
-            <EntityTypeMapping TypeName="ABCDataModel.Parcel">
+            <EntityTypeMapping TypeName="ABCModel.Parcel">
               <MappingFragment StoreEntitySet="Parcel">
                 <ScalarProperty Name="parcelId" ColumnName="parcelId" />
                 <ScalarProperty Name="customerId" ColumnName="customerId" />
@@ -107,7 +73,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tracking">
-            <EntityTypeMapping TypeName="ABCDataModel.Tracking">
+            <EntityTypeMapping TypeName="ABCModel.Tracking">
               <MappingFragment StoreEntitySet="Tracking">
                 <ScalarProperty Name="TrackingId" ColumnName="TrackingId" />
                 <ScalarProperty Name="TrackingDate" ColumnName="TrackingDate" />

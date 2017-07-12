@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\MyWork\Visual Studio 2013\Projects\caseABC\caseABC.Data\caseABCDataModel.edmx'. 
+﻿// T4 code generation is enabled for model '\\studenthome.hallam.shu.ac.uk\STUDENTHOME6\8\b1037178\MyWork\Visual Studio 2013\Projects\caseABC\caseABC.Data\caseABCDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

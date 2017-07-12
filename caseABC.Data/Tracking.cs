@@ -19,7 +19,5 @@ namespace caseABC.Data
         public string Location { get; set; }
         public string Notes { get; set; }
         public int parcelId { get; set; }
-    
-        public virtual Parcel Parcel { get; set; }
     }
 }

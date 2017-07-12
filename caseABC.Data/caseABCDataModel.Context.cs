@@ -13,10 +13,10 @@ namespace caseABC.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class caseABCEntities : DbContext
+    public partial class ABC_Entities : DbContext
     {
-        public caseABCEntities()
-            : base("name=caseABCEntities")
+        public ABC_Entities()
+            : base("name=ABC_Entities")
         {
         }
     

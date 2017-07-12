@@ -4,10 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dfc92107402349bba65d5953fbfef271" Name="Diagram1">
-        <EntityTypeShape EntityType="ABCDataModel.Parcel" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ABCDataModel.Tracking" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="ABCDataModel.FK__Tracking__parcel__3E52440B" ManuallyRouted="false" />
+      <Diagram DiagramId="d43703d3e9364fb3afcc97958a5e5efb" Name="Diagram1">
+        <EntityTypeShape EntityType="ABCModel.Parcel" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABCModel.Tracking" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

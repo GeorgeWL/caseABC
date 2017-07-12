@@ -39,12 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IService\IabcService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\abcService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IService\" />
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\caseABC.Data\caseABC.Data.csproj">
       <Project>{c60dbfb9-cdbc-4371-82b5-b76c32d53c44}</Project>
