@@ -4,35 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using caseABC.Data;
+using caseABC.Data.DAO;
 using caseABC.Services.IService;
 
 namespace caseABC.Services.Service
 {
     public class abcService : IabcService
     {
+        private abcDAO _abcDAO;
+        public abcService() { _abcDAO = new abcDAO(); }
         public IList<Parcel> GetCustomerParcels(int customerId)
         {
-            throw new NotImplementedException();
+            return _abcDAO.GetCustomerParcels(customerId);
         }
 
-        public void CreateCustomerParcel(int ParcelId)
+        public void CreateCustomerParcel(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _abcDAO.CreateCustomerParcel(parcel);
         }
 
-        public void EditCustomerParcel(int ParcelId)
+        public void EditCustomerParcel(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _abcDAO.EditCustomerParcel(parcel);
         }
 
-        public void DeleteCustomerParcel(int ParcelId)
+        public void DeleteCustomerParcel(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _abcDAO.DeleteCustomerParcel(parcel);
         }
 
         public IList<Tracking> GetTrackingEvents(int TrackingId)
         {
-            throw new NotImplementedException();
+            return _abcDAO.GetTrackingEvents(TrackingId);
         }
     }
 }

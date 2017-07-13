@@ -68,7 +68,8 @@ namespace caseABC.Data.DAO
 
         public void DeleteCustomerParcel(Parcel parcel)
         {
-            throw new NotImplementedException();
+            _context.Parcel.Remove(parcel);
+            _context.SaveChanges();
         }
 
         public IList<Tracking> GetTrackingEvents(int TrackingId)
