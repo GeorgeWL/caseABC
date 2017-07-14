@@ -18,19 +18,19 @@ namespace caseABC.Services.Service
             return _abcDAO.GetCustomerParcels(customerId);
         }
 
-        public void CreateCustomerParcel(Parcel parcel)
+        public void CreateCustomerParcel(int parcelId)
         {
-            _abcDAO.CreateCustomerParcel(parcel);
+            _abcDAO.CreateCustomerParcel(parcelId);
         }
 
-        public void EditCustomerParcel(Parcel parcel)
+        public void EditCustomerParcel(int parcelId)
         {
-            _abcDAO.EditCustomerParcel(parcel);
+            _abcDAO.EditCustomerParcel(parcelId);
         }
 
-        public void DeleteCustomerParcel(Parcel parcel)
+        public void DeleteCustomerParcel(int parcelId)
         {
-            _abcDAO.DeleteCustomerParcel(parcel);
+            _abcDAO.DeleteCustomerParcel(parcelId);
         }
 
         public IList<Tracking> GetTrackingEvents(int parcelId)

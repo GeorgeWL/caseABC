@@ -32,7 +32,7 @@ namespace caseABC.Data.DAO
             //throw new NotImplementedException();
         }
 
-        public void CreateCustomerParcel(Parcel parcel)
+        public void CreateCustomerParcel(int parcelId)
         {
             //Parcel parcels =
             //    (from parcel
@@ -45,12 +45,12 @@ namespace caseABC.Data.DAO
             //parcels.pickupAddress = parcelId.pickupAddress;
             //parcels.pickupDate = parcelId.pickupDate;
             //That's definitely wrong...I'll have to figure that out
-            _context.Parcel.Add(parcel);
+            _context.Parcel.Add(parcelId);
             _context.SaveChanges();
             //throw new NotImplementedException();
         }
 
-        public void EditCustomerParcel(Parcel parcel)
+        public void EditCustomerParcel(int parcelId)
         {
             Parcel parcels =
                 (from P
@@ -58,17 +58,17 @@ namespace caseABC.Data.DAO
                  //where parcel.parcelId == parcel.parcelId
                  select P).ToList<Parcel>().First();
             //change from context of parcels to equal parcel
-            parcels.parcelId = parcel.parcelId;
-            parcels.customerId = parcel.customerId;
-            parcels.pickupAddress = parcel.pickupAddress;
-            parcels.pickupDate = parcel.pickupDate;
+            parcels.parcelId = parcelId.parcelId;
+            parcels.customerId = parcelId.customerId;
+            parcels.pickupAddress = parcelId.pickupAddress;
+            parcels.pickupDate = parcelId.pickupDate;
             _context.SaveChanges();
             //throw new NotImplementedException();
         }
 
-        public void DeleteCustomerParcel(Parcel parcel)
+        public void DeleteCustomerParcel(int parcelIdl)
         {
-            _context.Parcel.Remove(parcel);
+            _context.Parcel.Remove(parcelIdl);
             _context.SaveChanges();
         }
 

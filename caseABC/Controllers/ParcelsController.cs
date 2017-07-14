@@ -25,13 +25,13 @@ namespace caseABC.Controllers
             return View();
         }
 
-        // GET: Music/Create
+        // GET: Parcel/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Music/Create
+        // POST: Parcels/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -47,14 +47,13 @@ namespace caseABC.Controllers
                 throw ex; 
             }
         }
-
-        // GET: Music/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Parcels/Edit/5
+        public ActionResult Edit(int parcelId)
         {
             return View();
         }
 
-        // POST: Music/Edit/5
+        // POST: Parcels/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -71,15 +70,15 @@ namespace caseABC.Controllers
             }
         }
 
-        // GET: Music/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Parcels/Delete/5
+        public ActionResult DeleteParcel(int parcelId)
         {
             return View();
         }
 
-        // POST: Music/Delete/5
+        // POST: Parcels/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult DeleteParcel(int id, FormCollection collection)
         {
             try
             {
