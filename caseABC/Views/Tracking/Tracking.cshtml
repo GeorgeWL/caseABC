@@ -1,0 +1,42 @@
+﻿@model IEnumerable<caseABC.Data.Tracking>
+
+@{
+    ViewBag.Title = "Tracking";
+}
+
+<h2>View</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrackingDate(DateTime))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location(String))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes(String))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parcelId(Int32))
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.parcelId)
+        </td>
+    </tr>
+}
+
+</table>

@@ -25,6 +25,6 @@ namespace caseABC.Data.IDAO
         void DeleteCustomerParcel(Parcel parcel);
     //Tracking
         //Should Simply be an IList of all Tracking Events
-        IList<Tracking> GetTrackingEvents(int TrackingId);
+        IList<Tracking> GetTrackingEvents(int parcelId);
     }
 }

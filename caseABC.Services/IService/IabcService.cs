@@ -8,7 +8,7 @@ using caseABC.Services;
 
 namespace caseABC.Services.IService
 {
-    interface IabcService
+    public interface IabcService
     {
         IList<Parcel> GetCustomerParcels(int customerId);
         void CreateCustomerParcel(Parcel parcel);
@@ -18,6 +18,6 @@ namespace caseABC.Services.IService
         void DeleteCustomerParcel(Parcel parcel);
         //Tracking
         //Should Simply be an IList of all Tracking Events
-        IList<Tracking> GetTrackingEvents(int TrackingId);
+        IList<Tracking> GetTrackingEvents(int parcelId);
     }
 }

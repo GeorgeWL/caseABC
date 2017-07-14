@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,10 +9,10 @@ using caseABC.Services.IService;
 
 namespace caseABC.Controllers
 {
-    public class HomeController : Controller
+    public class ParcelsController : Controller
     {
         private IabcService _abcService;
-        public HomeController()
+        public ParcelsController()
         {
             _abcService = new abcService();
         }
@@ -90,3 +89,6 @@ namespace caseABC.Controllers
         }
     }
 }
+
+
+        

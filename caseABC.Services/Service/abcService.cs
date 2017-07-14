@@ -33,9 +33,9 @@ namespace caseABC.Services.Service
             _abcDAO.DeleteCustomerParcel(parcel);
         }
 
-        public IList<Tracking> GetTrackingEvents(int TrackingId)
+        public IList<Tracking> GetTrackingEvents(int parcelId)
         {
-            return _abcDAO.GetTrackingEvents(TrackingId);
+            return _abcDAO.GetTrackingEvents(parcelId);
         }
     }
 }

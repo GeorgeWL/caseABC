@@ -72,14 +72,14 @@ namespace caseABC.Data.DAO
             _context.SaveChanges();
         }
 
-        public IList<Tracking> GetTrackingEvents(int TrackingId)
+        public IList<Tracking> GetTrackingEvents(int parcelId)
         {
             //make an Iquery of the Tracking table in database and store it in _trackings
             IQueryable<Tracking> _tracking;
             //let Iquery know what _parcel object represents
             _tracking = from tracking
                           in _context.Tracking
-                      where tracking.TrackingId == TrackingId
+                      where tracking.parcelId == parcelId
                       select tracking;
             return _tracking.ToList<Tracking>();
             //throw new NotImplementedException();
