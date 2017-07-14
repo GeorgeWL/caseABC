@@ -32,7 +32,7 @@ namespace caseABC.Data.DAO
             //throw new NotImplementedException();
         }
 
-        public void CreateCustomerParcel(int parcelId)
+        public void CreateCustomerParcel(Parcel parcel)
         {
             //Parcel parcels =
             //    (from parcel
@@ -45,7 +45,7 @@ namespace caseABC.Data.DAO
             //parcels.pickupAddress = parcelId.pickupAddress;
             //parcels.pickupDate = parcelId.pickupDate;
             //That's definitely wrong...I'll have to figure that out
-            _context.Parcel.Add(parcelId);
+            _context.Parcel.Add(parcel);
             _context.SaveChanges();
             //throw new NotImplementedException();
         }
@@ -53,34 +53,33 @@ namespace caseABC.Data.DAO
         public void EditCustomerParcel(int parcelId)
         {
             Parcel parcels =
-                (from P
+                (from p
                  in _context.Parcel
                  //where parcel.parcelId == parcel.parcelId
-                 select P).ToList<Parcel>().First();
+                 select p).ToList<Parcel>().First();
             //change from context of parcels to equal parcel
-            parcels.parcelId = parcelId.parcelId;
-            parcels.customerId = parcelId.customerId;
-            parcels.pickupAddress = parcelId.pickupAddress;
-            parcels.pickupDate = parcelId.pickupDate;
+            parcels.parcelId = parcelId;
+            parcels.customerId = Parcel.customerId;
+            parcels.pickupAddress = Parcel.pickupAddress;
+            parcels.pickupDate = Parcel.pickupDate;
             _context.SaveChanges();
             //throw new NotImplementedException();
         }
 
-        public void DeleteCustomerParcel(int parcelIdl)
+        public void DeleteCustomerParcel(Parcel parcel)
         {
-            _context.Parcel.Remove(parcelIdl);
+            _context.Parcel.Remove(parcel);
             _context.SaveChanges();
         }
 
         public IList<Tracking> GetTrackingEvents(int parcelId)
         {
             //make an Iquery of the Tracking table in database and store it in _trackings
-            IQueryable<Tracking> _tracking;
             //let Iquery know what _parcel object represents
-            _tracking = from tracking
-                          in _context.Tracking
-                      where tracking.parcelId == parcelId
-                      select tracking;
+            var _tracking = from tracking
+                in _context.Tracking
+                where tracking.parcelId == parcelId
+                select tracking;
             return _tracking.ToList<Tracking>();
             //throw new NotImplementedException();
         }
