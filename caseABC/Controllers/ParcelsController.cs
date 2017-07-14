@@ -6,16 +6,19 @@ using caseABC.Data.DAO;
 using caseABC.Data.IDAO;
 using caseABC.Services.Service;
 using caseABC.Services.IService;
+using System;
 
 namespace caseABC.Controllers
 {
     public class ParcelsController : Controller
     {
         private IabcService _abcService;
+
         public ParcelsController()
         {
             _abcService = new abcService();
         }
+
         // GET: Home
         public ActionResult Index()
         {
@@ -38,9 +41,10 @@ namespace caseABC.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
+            catch (Exception ex)
+            {   
                 return View();
+                throw ex; 
             }
         }
 
@@ -60,9 +64,10 @@ namespace caseABC.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
+                throw ex;
             }
         }
 
@@ -82,9 +87,10 @@ namespace caseABC.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
+                throw ex;
             }
         }
     }

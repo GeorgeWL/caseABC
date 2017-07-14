@@ -8,6 +8,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.TrackingID(Int32))
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TrackingDate(DateTime))
         </th>
         <th>
@@ -25,6 +28,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayNameFor(model => item.TrackingID)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.TrackingDate)
         </td>
         <td>
@@ -40,3 +46,8 @@
 }
 
 </table>
+<p>
+    @*  *@
+@Html.ActionLink("Details", "Tracking", new { id = item.TrackingId }) |
+@Html.ActionLink("Back to List", "Index")
+</p>
